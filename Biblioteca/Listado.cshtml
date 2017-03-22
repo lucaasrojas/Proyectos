@@ -1,0 +1,40 @@
+﻿@{
+    Page.Title = "DemoBiblioteca";
+    Layout = "_Layout.cshtml";
+    Database db = Database.Open("Biblioteca");
+
+    var listadoLibros = db.Query("SELECT * FROM Libros");
+    
+    
+    <div id="Contenedor">
+    <table id="Resultado">
+        <tr><th>ISBN</th><th>Nombre</th><th>Autor</th><th>Año</th><th>Editorial</th><th>Genero</th></tr>
+        
+        
+        @foreach (var item in listadoLibros)
+            {
+                var id = item["EditorialID"];
+                var editorial = db.QueryValue("SELECT Nombre FROM Editorial WHERE EditorialID = @0", id);
+                var isbn = item["ISBN"];
+                var genID = db.QueryValue("SELECT GeneroID FROM LibroGenero WHERE ISBN = @0", isbn);
+                var autID = db.QueryValue("SELECT AutorID FROM LibroAutor WHERE ISBN = @0", isbn);
+                var aut = db.QueryValue("SELECT Nombre FROM Autor WHERE AutorID = @0", autID);
+                var gen = db.QueryValue("SELECT Nombre FROM Genero WHERE GeneroID = @0", genID);
+                
+                <tr><td>@isbn</td><td>@item["Nombre"]</td><td>@aut</td><td>@item["Año"]</td><td>@editorial</td><td>@gen</td></tr>
+              }
+                  
+        
+    </table>
+    </div>
+}
+
+
+<div>
+    
+
+
+
+
+
+</div>

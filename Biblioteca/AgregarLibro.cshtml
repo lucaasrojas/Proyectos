@@ -1,0 +1,66 @@
+﻿@{
+    Page.Title = "DemoBiblioteca";
+    Layout = "_Layout.cshtml";
+    Database db = Database.Open("Biblioteca");
+    
+    var listaGeneros = db.Query("SELECT Nombre FROM Genero");
+    var listaEditoriales = db.Query("SELECT Nombre FROM Editorial");
+    
+    
+    if(IsPost){
+
+        
+        string isbn = Request["isbn"];
+        string nombre = Request["nombre"];
+        string autor = Request["autor"];
+        string editorial = Request["editorial"];
+        string año = Request["año"];
+        string genero = Request["genero"];
+
+        db.Query("INSERT INTO Autor VALUES (@0)", autor);
+        var editorialID = db.QueryValue("SELECT EditorialID FROM Editorial WHERE Nombre = @0", editorial);
+        var generoID = db.QueryValue("SELECT GeneroID FROM Genero WHERE Nombre = @0", genero);
+        var autorID = db.QueryValue("SELECT AutorID FROM Autor WHERE Nombre = @0", autor);
+        db.Query("INSERT INTO  Libros VALUES (@0,@1,@2,@3)", isbn, nombre, año, editorialID);
+        db.Query("INSERT INTO LibroGenero VALUES (@0,@1)", isbn, generoID);
+        db.Query("INSERT INTO LibroAutor VALUES (@0,@1)", isbn, autorID);
+        
+        
+   }
+    
+    
+}
+
+
+<div>
+    
+    <form action="#" method="post">
+        <div id="Contenedor">
+        <table id="Resultado">
+            <tr><td><label>ISBN: </label></td><td><input type="text" name="isbn" value="" /></td></tr>
+            <tr><td><label>Nombre: </label></td><td><input type="text" name="nombre" value="" /></td></tr>
+            <tr><td><label>Autor: </label></td><td><input type="text" name="autor" value="" /></td></tr>
+            <tr><td><label>Genero: </label><td>
+                <select name="genero">
+            @foreach (var item in listaGeneros)
+            {
+                <option value="@item["Nombre"]">@item["Nombre"]</option>
+            }
+                </select>
+            </td></tr>
+            <tr><td><label>Editorial: </label></td><td>
+                <select name="editorial">
+                    @foreach (var item in listaEditoriales)
+                    {
+                        <option value="@item["Nombre"]">@item["Nombre"]</option>
+                    }
+                </select>
+            </td></tr>
+            <tr><td><label>Año: </label></td><td><input type="text" name="año" value="" /></td></tr>
+            <tr><td><input type="submit" name="btnenviar" value="Guardar" /></td></tr>
+        </table>
+        </div>
+    </form>
+    
+    
+</div>

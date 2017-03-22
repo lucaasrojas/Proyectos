@@ -1,0 +1,26 @@
+﻿@{
+    Page.Title = "DemoBiblioteca";
+    Layout = "_Layout.cshtml";
+    
+    Database db = Database.Open("Biblioteca");
+
+    var listadoEditoriales = db.Query("SELECT * FROM Editorial");
+    
+   <div id="Contenedor">
+     <table id="Resultado">
+        <tr><th>ID</th><th>Nombre</th></tr>
+    
+        
+        @foreach (var item in listadoEditoriales)
+            {
+                
+                <tr><td>@item["EditorialID"]</td><td>@item["Nombre"]</td></tr>
+            }
+    </table>
+    </div>
+}
+
+
+<div>
+    
+</div>

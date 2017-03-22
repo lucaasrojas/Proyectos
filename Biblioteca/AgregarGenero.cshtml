@@ -1,0 +1,29 @@
+﻿@{
+    Page.Title = "DemoBiblioteca";
+    Layout = "_Layout.cshtml";
+    Database db = Database.Open("Biblioteca");
+    List<Genero> listaGenero = new List<Genero>();
+    
+    if(IsPost)
+    {
+        string genero = Request["genero"];
+        db.Query("INSERT INTO Genero VALUES (@0)", genero);
+    }
+    
+}
+
+
+<div>
+    
+    <form action="#" method="post">
+        <div id="Contenedor">
+        <table id="Resultado">
+            <tr><td><label>Genero: </label></td><td><input type="text" name="genero" value="" /></td></tr>
+            <tr><td><input type="submit" name="btnenviar" value="Guardar" /></td></tr>
+        </table>
+        </div>
+    </form>
+
+    
+
+</div>
