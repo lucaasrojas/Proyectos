@@ -1,0 +1,12 @@
+C:\Users\Alumno\Documents\Visual Studio 2012\Projects\Clase2\Ejercicio3\bin\Debug\Ejercicio3.exe.config
+C:\Users\Alumno\Documents\Visual Studio 2012\Projects\Clase2\Ejercicio3\bin\Debug\Ejercicio3.exe
+C:\Users\Alumno\Documents\Visual Studio 2012\Projects\Clase2\Ejercicio3\bin\Debug\Ejercicio3.pdb
+C:\Users\Alumno\Documents\Visual Studio 2012\Projects\Clase2\Ejercicio3\obj\Debug\Ejercicio3.exe
+C:\Users\Alumno\Documents\Visual Studio 2012\Projects\Clase2\Ejercicio3\obj\Debug\Ejercicio3.pdb
+C:\Users\Alumno\Documents\Visual Studio 2012\Projects\Clase2\Ejercicio3\obj\Debug\Ejercicio3.csprojResolveAssemblyReference.cache
+C:\Users\lucas\Documents\Visual Studio 2012\Projects\Clase2 (1)\Ejercicio3\bin\Debug\Ejercicio3.exe.config
+C:\Users\lucas\Documents\Visual Studio 2012\Projects\Clase2 (1)\Ejercicio3\bin\Debug\Ejercicio3.exe
+C:\Users\lucas\Documents\Visual Studio 2012\Projects\Clase2 (1)\Ejercicio3\bin\Debug\Ejercicio3.pdb
+C:\Users\lucas\Documents\Visual Studio 2012\Projects\Clase2 (1)\Ejercicio3\obj\Debug\Ejercicio3.csprojResolveAssemblyReference.cache
+C:\Users\lucas\Documents\Visual Studio 2012\Projects\Clase2 (1)\Ejercicio3\obj\Debug\Ejercicio3.exe
+C:\Users\lucas\Documents\Visual Studio 2012\Projects\Clase2 (1)\Ejercicio3\obj\Debug\Ejercicio3.pdb
